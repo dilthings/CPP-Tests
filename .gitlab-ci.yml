@@ -1,0 +1,17 @@
+# .gitlab-ci.yml
+stages:
+  - build
+  - test
+
+build_project:
+  stage: build
+  script:
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make
+
+run_tests:
+  stage: test
+  script:
+    - ./build/MyTests
